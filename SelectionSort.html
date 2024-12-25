@@ -1,0 +1,42 @@
+Definition and Algorithm Steps:
+<!-- 
+Selection Sort is a simple sorting algorithm that repeatedly selects the smallest (or largest, depending
+on sorting order) element from the unsorted portion of the array and moves it to the sorted portion.
+
+1.) Start with the first element as the minimum.
+2.) Compare the current element with the rest of the elements in the unsorted portion of the array.
+3.) If a smaller element is found, update the minimum.
+4.) After the iteration, swap the minimum element with the current element.
+5.) Move to the next position and repeat until the entire array is sorted. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort</title>
+</head>
+<body>
+    <h2>Selection Sort</h2>
+
+    <script>
+        let arr = [23, 12, 56, 43,9]
+        function SelectionSort () {
+             let n = arr.length;
+            for(let i=0; i< n ; i++){
+                let current = i;
+                for(let j = i + 1; j < n ; j++){
+                    if(arr[j] < arr[current]){
+                        current = j
+                    }
+                }
+                if(current !== i){
+                    [arr[i], arr[current]] = [arr[current], arr[i]]
+                }
+            }
+            return arr;
+        }
+        console.log(SelectionSort())
+    </script>
+</body>
+</html>

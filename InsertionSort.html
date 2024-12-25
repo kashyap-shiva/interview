@@ -1,0 +1,40 @@
+Defintion and Steps :
+
+<!-- Insertion Sort is a simple and efficient sorting algorithm for small datasets. It works by building a 
+sorted portion of the array one element at a time. Each new element is inserted into the correct 
+position relative to the already sorted portion.
+
+Algorithm Steps:
+Start from the second element (index 1) and assume the first element (index 0) is already sorted.
+Compare the current element with elements in the sorted portion.
+Shift all elements larger than the current element one position to the right.
+Insert the current element into its correct position.
+Repeat for all elements until the array is fully sorted. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Sort</title>
+</head>
+<body>
+    <script>
+        let arr = [23, 12, 56, 43,9]
+        function InserionSort( ) {
+            let n = arr.length;
+            for(let i =1 ; i < n; i++){
+                let j = i -1;
+                while(j >= 0 && arr[j] > arr[i]){
+                    arr[j+1] = arr[j];
+                    j--
+                }
+                 arr[j+1] = arr[i]
+            }
+            return arr
+        }
+        console.log(InserionSort())
+    </script>
+</body>
+</html>

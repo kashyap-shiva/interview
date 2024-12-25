@@ -1,0 +1,33 @@
+<!-- //Definition : Bubble sort algorithm is a simple sorting technique that compares two adjacent 
+// elements in an array and swaps them if they are in the wrong order. It keeps repeating this
+//  process until the array is sorted. And after iteration last last element will get sort , so length 
+// length will decrease from end after each iteration.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort</title>
+</head>
+<body>
+    <h2>Bubble Sort</h2>
+    <script>
+        let arr = [23, 12, 56, 43,9]
+        function SortArray () {
+                 let n = arr.length-1;
+                for(let i =0; i< n; i++){
+                    for(let j = 0 ; j< n-i ; j++){
+                        if(arr[j] > arr[j+1]){
+                            [arr[j] , arr[j+1]] = [arr[j+1], arr[j]]
+                        }
+                    }
+                }
+                return arr
+        }
+        console.log(SortArray())
+
+    </script>
+</body>
+</html>
