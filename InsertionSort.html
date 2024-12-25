@@ -24,13 +24,14 @@ Repeat for all elements until the array is fully sorted. -->
         let arr = [23, 12, 56, 43,9]
         function InserionSort( ) {
             let n = arr.length;
+            let key = arr[i];
             for(let i =1 ; i < n; i++){
                 let j = i -1;
-                while(j >= 0 && arr[j] > arr[i]){
+                while(j >= 0 && arr[j] > key){
                     arr[j+1] = arr[j];
                     j--
                 }
-                 arr[j+1] = arr[i]
+                 arr[j+1] = key
             }
             return arr
         }
