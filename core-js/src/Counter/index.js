@@ -1,11 +1,10 @@
 // Here is Implementation of a create Counter function using closures.
-import React , {useState} from "react"
+import React, { useState, useRef } from "react";
 
 const Counter = () => {
+  // Create closure-based counter
   const createCounter = () => {
     let count = 0;
-    console.log("count", count);
-    
     return {
       increment: () => ++count,
       decrement: () => --count,
@@ -14,16 +13,31 @@ const Counter = () => {
     };
   };
 
-  const counter = createCounter()
-  const [val, setVal] = useState(counter.getValue())
-  console.log("val", val);
-  
+  const counterRef = useRef(createCounter()); // Create the counter instance and store it in a ref
+  const [val, setVal] = useState(counterRef.current.getValue()); // Initialize the state with counter value
+
+  // Update React state on action
+  const handleIncrement = () => {
+    counterRef.current.increment(); // Increment internal counter value
+    setVal(counterRef.current.getValue()); // Update React state with new value
+  };
+
+  const handleDecrement = () => {
+    counterRef.current.decrement(); // Decrement internal counter value
+    setVal(counterRef.current.getValue()); // Update React state with new value
+  };
+
+  const handleReset = () => {
+    counterRef.current.reset(); // Reset internal counter value
+    setVal(counterRef.current.getValue()); // Update React state with new value
+  };
+
   return (
     <div>
-      <h2>Counter : {val}</h2>
-      <button onClick = {()=> setVal(counter.increment())}>Increment</button>
-      <button onClick = {()=> setVal(counter.decrement())}>Decrement</button>
-      <button onClick = {()=> setVal(counter.reset())}>Reset</button>
+      <h2>Counter: {val}</h2>
+      <button onClick={handleIncrement}>Increment</button>
+      <button onClick={handleDecrement}>Decrement</button>
+      <button onClick={handleReset}>Reset</button>
     </div>
   );
 };
