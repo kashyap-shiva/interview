@@ -5,7 +5,6 @@ function removeDuplicate(arr){
         for(let j = 0; j < array.length ; j++){
             if(arr[i] === array[j]){
                 duplicate = true;
-                array.push(arr[i])
                 break;
             }
         }
