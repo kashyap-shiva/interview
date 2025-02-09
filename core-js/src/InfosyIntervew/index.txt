@@ -1,0 +1,113 @@
+Intro :
+Hi, I’m Shiva Kashyap. I was born and brought up in Kanpur, Uttar Pradesh. I completed my Bachelor's degree in IT from DAV College, Kanpur,
+and later pursued an MCA in IT from Mansarovar University.During my first year of MCA, I started my professional journey as a Frontend Developer
+at Htech Soft in my hometown, where I worked for about one and a half years. After that, I joined my current company, Senwell Solutions, in Pune
+as a Software Developer. Here, I have been actively working on an internal project for Concentrix. I also have hands-on experience with UI libraries
+like MUI, unit testing with Jest, and implementing best practices for performance optimization and state management like Redux.
+
+Infosys Interview Questions : 
+
+Round One :
+
+1. What is prop drilling? 
+2. what is virtual dom ?
+3. React -lifecycle ?
+4. hmtl5 elements 
+5. cross site scripting
+6. call, bind and apply
+7. var , let and const.
+8. state,props, hooks,hoc, pure components.
+9. redux
+10. difference between redux and flux
+11. css , scss
+12.  What is conditional rendering in React?
+13. What are closures?
+14. OOPS concept in JavaScript. 
+15. What is ACID in database? 
+16. Stack vs Heap
+17. What are the benefits of React?
+18. What is useReducer and UseContext api?
+19. What is function currying
+20.  What is one way data binding?
+21. Difference between state and props?
+22. What is redux middleware
+23. What is useEffect ?
+25. what is shallow copy and deep copy ?
+26. tell me about es6 feature used 
+27. diff b/w foreach and map
+28. what is promises
+29. diff b/w promises and async await
+30. what is rest and spread operator, with example
+31. what is slice and splice method in js?
+32. what is strict mode ?
+33. what is jsx ? can browser understand jsx ?
+34. make a small form component with name and password with validation ?
+35. useMemo / react.memo differnce
+36. where you will perform an api call if you need to get data before componentdidmount ?
+37. what is webpack ? why it used 
+
+
+Round Two :	
+
+1. explain your role in current project ?
+2. did you ever worked directly with client ?
+3. can you tell me how you plan the design architecture ?
+4. do you follow the agile / scrum method ?
+5. how the total workflow of your applicationworks right from pushing code to repository ?
+6. do you know component level testing ?
+7. do you have any idea about CI/CD ?
+
+
+State : State is a built-in object in React that holds data or information about the component.It can be modified.
+       When there is a change in state ,  React re-renders that component to reflect the new state in the UI.
+       In functional components, we use the useState hook to create and update state.
+
+Props : Props (short for "properties") are how data is passed from a parent component to a child component in React. 
+        They are read-only and cannot be modified by the child component.Props allow you to pass data or functions from
+        a parent component to its child components, allowing for dynamic rendering based on that data.
+
+JSX : a syntax extension of JS that allows developers to write HTML in their JS code.
+     How JSX works:
+	JSX is essentially a syntactic sugar on top of React.createElement calls. So, when we write JSX, it’s converted into JavaScript 
+	function calls that create elements.advantage of jsx is more readability.
+     .jsx : for react components to use js+html
+     .js : for functions , hooks only pure js functions
+
+Pure Component : a pure component is a higher-order component (HOC) that only re-renders when its props or state change.It can be 
+                can be achieved using React.memo().
+                React.memo(): takes a functional component and returns a new component that only re-renders when its props change.  
+
+
+Lifting state up: It allows you to share state between sibling components by managing the state in their common parent.
+
+DOM diffing :Once React knows which virtual DOM objects have changed, then React updates only those objects, in the real DOM. 
+             This makes the performance far better when compared to manipulating the real DOM directly.
+
+What is an Event in React : An event in React is an action or user interaction (like a click, input change, hover, keypress, etc.) 
+                            that triggers a function.Event names in React use camelCase (e.g., onClick instead of onclick).
+
+Hooks :
+1.) useReducer Hook : The useReducer hook in React is used for state management, similar to useState, but more powerful when dealing with
+                      complex state logic.we can say mini Redux inside your component! Instead of updating state directly, dispatch 
+                      actions that modify state using a reducer function.
+
+2.) useEffect Hook : The useEffect hook in React is used to handle side effects in functional components. Side effects include things like:
+                     * Fetching data from an API , Manipulating the DOM and many more.
+                     The first argument is a callback function that runs the side effect.The second argument is an array of dependencies:
+                     [] - Runs only once after the initial render.
+
+3.) useLayoutEffect : useLayoutEffect is a React hook similar to useEffect, but it runs synchronously after the DOM updates and before the 
+                      browser paints the screen. In contrast, useEffect runs asynchronously after the screen is painted.
+
+Differnce between useEffect and useLayoutEffect :
+
+Situation	                  useEffect ✅	useLayoutEffect ✅
+Fetching data from an API	    ✅	             ❌
+Logging	                        ✅	             ❌
+Managing subscriptions	        ✅	             ❌
+DOM measurements          	    ❌	             ✅
+Mutating the DOM before paint	❌	             ✅
+Synchronous animations	        ❌	             ✅
+ 
+4.) useRef: useRef persists values across renders but does not trigger re-renders when updated.It can be used to access a DOM element directly.
+
