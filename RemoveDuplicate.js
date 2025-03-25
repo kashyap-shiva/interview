@@ -1,18 +1,14 @@
-function removeDuplicate(arr){
-    let array = []
-    for(let i=0; i< arr.length ; i++){
-        let duplicate = false;
-        for(let j = 0; j < array.length ; j++){
-            if(arr[i] === array[j]){
-                duplicate = true;
-                break;
-            }
-        }
-        if(!duplicate){
-            array.push(arr[i])
-        }
+const array = [1, 2, 3, 2, 4, 1, 5, "hello", "hello"];
+function removeDuplicate(arr) {
+  const seen = {};
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!seen[arr[i]]) {
+      seen[arr[i]] = true;
+      result.push(arr[i]);
+      console.log(seen)
     }
-    return array
+  }
+  return result;
 }
-let arr =[1, 2, 3, 2, 4, 5, 4, 5];
-console.log(removeDuplicate(arr))
+console.log(removeDuplicate(array));
